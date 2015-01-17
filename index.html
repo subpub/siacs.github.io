@@ -53,7 +53,7 @@
           <div class="col-lg-8">
             <h1>The very last word in instant messaging</h1>
             <p>Conversations is a Jabber/XMPP client for Android 4.0+ smartphones
-		that has been optimized for a unique mobile experience.</p>
+		that has been optimized to provide a unique mobile experience.</p>
             <p><a class="btn btn-primary"
 			href="https://play.google.com/store/apps/details?id=eu.siacs.conversations">Buy
 		now on google play</a></p>
@@ -68,10 +68,11 @@
 src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
 alt="Generic placeholder image" style="width: 140px; height: 140px;">
           <h2 class="text-center">Send Images</h2>
-		  <p>Don’t stop at text messages. Conversations allows you to easily share pictures with
-		  your contacts and embeds them directly into your chat.</p>
-		  <p>Have something personal to say? Turn on end-to-end encryption for extra
-		  security</p>
+		  <p>Don’t stop at text messages. Conversations allows you to easily share files with
+		  your contacts and embeds images directly into your chat.</p>
+		  <p>Have something personal to say? Turn on end-to-end encryption for extra privacy.</p>
+		  <p class="text-center"><a class="btn btn-primary"
+			  href="#security">security & privacy</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <img class="img-circle center-block"
@@ -81,7 +82,7 @@ alt="Generic placeholder image" style="width: 140px; height: 140px;">
 		  <p>Conversations shows you if your contact has read your message. If you don’t want
 		  your contacts to know whether you have read a message yourself you can simply
 		  disable that feature in the settings.</p>
-		  <p>
+		  <p class="text-center"><a class="btn btn-primary">Message confirmation</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <img class="img-circle center-block"
@@ -90,6 +91,8 @@ alt="Generic placeholder image" style="width: 140px; height: 140px;">
           <h2 class="text-center">Dynamic history loading</h2>
 		  <p>Conversations will automatically load the message history from your server when you need it.</p>
 		  <p>If you are using more than one device at the same time both your sent and received messages will show up on all devices.</p>
+		  <p class="text-center"><a class="btn btn-primary">message
+			  synchronization</a></p>
         </div><!-- /.col-lg-4 -->
 	  </div>
       <div class="row">
@@ -101,6 +104,9 @@ alt="Generic placeholder image" style="width: 140px; height: 140px;">
 		  <p>Creating group chats has never been easier. Simply choose Invite contact from the
 		  menu to start a group chat. Conversations will automatically create the group chat
 		  on your server and invite your contacts to it.</p>
+		  <p>And of course you don’t have to miss out on your contacts profile pictures when
+		  using group chats either.</p>
+		  <p class="text-center"><a class="btn btn-primary">Profile pictures</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <img class="img-circle center-block"
@@ -110,6 +116,8 @@ alt="Generic placeholder image" style="width: 140px; height: 140px;">
 		  <p>Even though Conversations keeps its own connection to the XMPP server and thus is
 		  indepentend of Googles push messaging system (GCM) it has does a lot of work to keep
 		  the impact on battery life as low as possible.</p>
+		  <p class="text-center"><a class="btn btn-primary">mobile
+			  optimizations</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <img class="img-circle center-block" src="images/feature_open_source.jpg" alt="Photo of some source
@@ -123,6 +131,32 @@ alt="Generic placeholder image" style="width: 140px; height: 140px;">
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
 	</div>
+    <hr class="featurette-divider">
+    <div class="container" id="security">
+      <div class="row">
+        <div class="col-lg-8">
+          <h1>Security & Privacy</h1>
+          <p>XMPP is a federated protocol which means you can freely choose a trustworthy server for
+yourself while still chatting with contacts that are using other servers. The communication between
+Conversations and the XMPP server as well as the communication between the individual servers is TLS
+encrypted.</p>
+          <p>This way not only your messages are save but more importantly it is impossible for an
+outside attacker to intercept your meta data (with whom you are chatting) without attacking your
+server first.</p>
+          <p>On top of that Conversations gives you the choice to enable one of two
+end-to-end encryption mechanisms. The first one being OTR which is very easy to setup and gives you
+forward secrecy and plausible deniability but will disable message synchronization between multiple
+devices which means your contact will have to select a specific device of yours before starting to
+communicate with you.</p>
+          <p>OpenPGP does not have this limitations but is a little harder to setup and potentially
+vulnerable against replay attacks.</p>
+          <p>However the choice is yours.</p>
+        </div>
+        <div class="col-lg-4">
+        </div>
+      </div>
+    </div>
+
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
   </body>
