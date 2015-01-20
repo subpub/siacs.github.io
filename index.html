@@ -61,7 +61,7 @@
         </div>
       </div>
     </div>
-	<div class="container" id="features">
+    <div class="container" id="features">
       <div class="row">
         <div class="col-lg-4">
           <img class="img-circle center-block"
@@ -130,11 +130,11 @@ alt="Generic placeholder image" style="width: 140px; height: 140px;">
 			  h ref="#development" role="button">Start developing</a></p>
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
-	</div>
+    </div>
     <hr class="featurette-divider">
     <div class="container" id="security">
       <div class="row">
-        <div class="col-lg-8">
+        <div class="col-lg-7">
           <h1>Security & Privacy</h1>
           <p>XMPP is a federated protocol which means you can freely choose a trustworthy server for
 yourself while still chatting with contacts that are using other servers. The communication between
@@ -152,11 +152,25 @@ communicate with you.</p>
 vulnerable against replay attacks.</p>
           <p>However the choice is yours.</p>
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-5">
         </div>
       </div>
     </div>
-
+    <hr>
+    <div class="container" id="xmpp">
+      <div class="row">
+        <div class="col-lg-5">
+        </div>
+        <div class="col-lg-7">
+          <h1>XMPP Features</h1>
+          <p>XMPP is an extensible protocol. These extensions are defined in so called XEP’s. Conversations supports a couple of those XEP’s to improve reliabilty and all in all provide for a better user experience.</p>
+          <h3>Reliabilty</h3>
+          <p>The internet connection on cell phones is rather unstable. It switches between wifi and 3G constantily and it might even drop out on occasion. The XEP-0191 Stream Managment allows Conversations to survive those switches. Instead of having to establish a completly new session the servers gives the client a 5 minute window to resume a previously established session. Message that arrived in the mean time will be send to the client after it picked up the session again.</p>
+          <h3>Message synchronization</h3>
+          <p>Users are no longer using just on devices.</p>
+        </div>
+      </div>
+    </div>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
   </body>
