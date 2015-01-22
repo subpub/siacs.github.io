@@ -2,3 +2,11 @@ body {
   padding-top: 90px;
   position: relative;
 }
+
+.offsetanchor:before {
+	display: block;
+	content: " ";
+	margin-top: -70px;
+	height: 70px;
+	visibility: hidden;
+}

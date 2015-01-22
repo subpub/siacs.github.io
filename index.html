@@ -15,7 +15,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body data-spy="scroll" data-target="#navbar" data-offset="0">
+  <body data-spy="scroll" data-target="#navbar" data-offset="70">
     <div class="navbar-wrapper">
       <div class="container">
         <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -61,7 +61,7 @@
         </div>
       </div>
     </div>
-    <div class="container" id="features">
+    <div class="container offsetanchor" id="features">
       <div class="row">
         <div class="col-lg-4">
           <img class="img-circle center-block"
@@ -79,10 +79,10 @@ alt="Generic placeholder image" style="width: 140px; height: 140px;">
 src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
 alt="Generic placeholder image" style="width: 140px; height: 140px;">
           <h2 class="text-center">Read Markers</h2>
-		  <p>Conversations shows you if your contact has read your message. If you don’t want
-		  your contacts to know whether you have read a message yourself you can simply
+		  <p>Wondering if your contact has read your messages? Conversations will tell you.</p>
+		  <p>And if you don’t want your contacts to know whether you have read a message yourself you can simply
 		  disable that feature in the settings.</p>
-		  <p class="text-center"><a class="btn btn-primary">Message confirmation</a></p>
+		  <p class="text-center"><a href="#confirmation" class="btn btn-primary">Message confirmation</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <img class="img-circle center-block"
@@ -91,8 +91,7 @@ alt="Generic placeholder image" style="width: 140px; height: 140px;">
           <h2 class="text-center">Dynamic history loading</h2>
 		  <p>Conversations will automatically load the message history from your server when you need it.</p>
 		  <p>If you are using more than one device at the same time both your sent and received messages will show up on all devices.</p>
-		  <p class="text-center"><a class="btn btn-primary">message
-			  synchronization</a></p>
+		  <p class="text-center"><a href="#synchronization" class="btn btn-primary">message synchronization</a></p>
         </div><!-- /.col-lg-4 -->
 	  </div>
       <div class="row">
@@ -106,18 +105,16 @@ alt="Generic placeholder image" style="width: 140px; height: 140px;">
 		  on your server and invite your contacts to it.</p>
 		  <p>And of course you don’t have to miss out on your contacts profile pictures when
 		  using group chats either.</p>
-		  <p class="text-center"><a class="btn btn-primary">Profile pictures</a></p>
+		  <p class="text-center"><a href="#avatars" class="btn btn-primary">Profile pictures</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img class="img-circle center-block"
-src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
-alt="Generic placeholder image" style="width: 140px; height: 140px;">
+          <img class="img-circle center-block" src="images/feature_battery_life.jpg" alt="Screenshot
+		  of Android battery stats" style="width: 140px; height: 140px;">
           <h2 class="text-center">Low impact on battery</h2>
 		  <p>Even though Conversations keeps its own connection to the XMPP server and thus is
 		  indepentend of Googles push messaging system (GCM) it has does a lot of work to keep
 		  the impact on battery life as low as possible.</p>
-		  <p class="text-center"><a class="btn btn-primary">mobile
-			  optimizations</a></p>
+		  <p class="text-center"><a href="#optimizations"class="btn btn-primary">mobile optimizations</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <img class="img-circle center-block" src="images/feature_open_source.jpg" alt="Photo of some source
@@ -132,7 +129,7 @@ alt="Generic placeholder image" style="width: 140px; height: 140px;">
       </div><!-- /.row -->
     </div>
     <hr class="featurette-divider">
-    <div class="container" id="security">
+    <div class="container offsetanchor" id="security">
       <div class="row">
         <div class="col-lg-7">
           <h1>Security & Privacy</h1>
@@ -164,10 +161,34 @@ vulnerable against replay attacks.</p>
         <div class="col-lg-7">
           <h1>XMPP Features</h1>
           <p>XMPP is an extensible protocol. These extensions are defined in so called XEP’s. Conversations supports a couple of those XEP’s to improve reliabilty and all in all provide for a better user experience.</p>
-          <h3>Reliabilty</h3>
-          <p>The internet connection on cell phones is rather unstable. It switches between wifi and 3G constantily and it might even drop out on occasion. The XEP-0191 Stream Managment allows Conversations to survive those switches. Instead of having to establish a completly new session the servers gives the client a 5 minute window to resume a previously established session. Message that arrived in the mean time will be send to the client after it picked up the session again.</p>
-          <h3>Message synchronization</h3>
-          <p>Users are no longer using just on devices.</p>
+		  <p>There is a chance that your current XMPP server does not support these extensions;
+		  therefore to get the most out of Conversations you should consider either switching to an
+		  XMPP server that does or — even better — run your own XMPP server for you and your
+		  friends.</p>
+          <h3 id="optimizations" class="offsetanchor">Mobile optimizations</h3>
+          <p>The internet connection on cell phones is rather unstable. It constantly switches between wifi and
+		  3G and might even drop out on occasion. The <a href="http://xmpp.org/extensions/xep-0198.html">XEP-0198: Stream Managment</a> allows
+		  Conversations to survive those switches. Instead of having to establish a completly new
+		  session the servers gives the client a 5 minute window to resume a previously established
+		  session. Messages that arrived in the mean time will be resent automatically.</p>
+		  <p>Stream managment also minimizes traffic by sparing the client from fetching
+		  static information (contact list, conference bookmark, avatars) on every
+		  connect.</p>
+		  <p>Using <a href="http://xmpp.org/extensions/xep-0352.html">XEP-0352: Client State Indication</a> Conversations communicates to
+		  the server whether or not the client is in the background right now. Based on that information
+		  the server can withhold unimportant packages and thus allowing the client to stay in deep sleep
+		  for longer.</p>
+          <h3 class="offsetanchor" id="synchronization">Message synchronization</h3>
+          <p>You are no longer limited to one device. If you are online with mulitple devices
+		  simultaneously the <a href="http://xmpp.org/extensions/xep-0280.html">XEP-0280: Message
+			  Carbons</a> will be used to send copies of both your sent and received messages to all
+		  devices.</p>
+		  <p>If you are installing Conversations on a new device or catching up after being offline for
+		  a while Conversations will use <a
+			  href="http://xmpp.org/extensions/xep-0313.html">XEP-0313: Message Archive
+			  Management</a> to fetch the message history from your server.</p>
+		  <h3 id="confirmation" class="offsetanchor">Message confirmation</h3>
+		  <p></p>
         </div>
       </div>
     </div>
