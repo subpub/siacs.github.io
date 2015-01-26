@@ -42,7 +42,7 @@
               </li>
 
               <li>
-                <a href="#gethelp">Get Help</a>
+                <a href="#support">Support</a>
               </li>
 
               <li>
@@ -222,6 +222,11 @@
 
   <div class="container offsetanchor" id="xmpp">
     <div class="row">
+      <div class="col-lg-8 col-lg-push-4">
+        <h1>XMPP Features</h1>
+      </div>
+    </div>
+    <div class="row">
       <div class="col-lg-4">
         <table class="table table-striped">
           <tbody>
@@ -354,9 +359,7 @@
         </table>
       </div>
 
-      <div class="col-lg-8">
-        <h1>XMPP Features</h1>
-
+      <div class="col-lg-8" style="margin-bottom: 0px">
         <p>XMPP is an extensible protocol. These extensions are defined in so called XEP’s.
         Conversations supports a couple of those XEP’s to improve reliabilty and all in all provide
         for a better user experience.</p>
@@ -399,20 +402,29 @@
 
         <p>Your contact isn’t responding imedialty? Conversations uses <a href=
         "http://xmpp.org/extensions/xep-0333.html">XEP-0333: Chat Markers</a> to inform you when
-        your messages have been read. And since Conversations cares about your privacey you can
+        your messages have been read.
+        <br>
+        And since Conversations cares about your privacey you can
         easily opt-out of this feature as well.</p>
 
         <p>Are your contacts still using old, unreliable clients? Turn on <a href=
-        "http://xmpp.org/extensions/xep-0184.html">XEP-0184: Message Delivery Receipts</a> in the expert
-        to make sure your contact has succesfully received your message.</p>
+        "http://xmpp.org/extensions/xep-0184.html">XEP-0184: Message Delivery Receipts</a> in the
+        <em>expert settings</em> to make sure your contact has succesfully received your message.</p>
       </div>
     </div>
 
     <div class="row">
-      <div class="col-lg-6">
+      <div class="col-lg-12" style="margin-bottom: 0px">
         <h3 class="offsetanchor" id="avatars">Contact pictures</h3>
-
-        <p>Put a face to your contacts.</p>
+      </div>
+      <div class="col-lg-6">
+        <p>Put a face to your contacts. Conversations lets you upload a profile picture (Avatar) to your
+        server for all your contacts to see by utilizing the PEP based <a href=
+        "http://xmpp.org/extensions/xep-0084.html">XEP-0084: User Avatar</a>. Contrarey to other methods
+        of publishing avatars the PEP based approach handles data usage more efficantly by separating data
+        and meta data.</p>
+        <p>On top of that Conversations allows you to use the contact name and pictures provided by the
+        Android address book.</p>
         <h3 class="offsetanchor" id="tags">Dynamic tags</h3>
 
         <p>Conversations gives old features a new spin. Being able to organize your contacts into groups
@@ -422,6 +434,10 @@
         To keep Conversations as simple as possible this feature is turned off by default. If you
         need to handle a large contact base you can enable it via the <em>Show dynamic tags</em>
         switch in the settings.</p>
+
+        <p class="text-center"><a class="btn btn-primary" href=
+          "https://play.google.com/store/apps/details?id=eu.siacs.conversations">Buy now on google
+          play</a></p>
       </div>
       <div class="col-lg-3">
         <div class="thumbnail vcenter">
@@ -432,6 +448,34 @@
         <div class="thumbnail">
           <img class="img-responsive center-block" src="images/screenshot_dynamic_tags.jpg">
         </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="container offsetanchor" id="support">
+    <div class="row">
+      <div class="col-lg-7 col-lg-push-5">
+        <h1>Support</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-5">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <h4>Questions?</h4>
+            <p>If you have general questions about Conversations that are not answered by our FAQ you can join the Conversations group chat on <a href="xmpp:conversations@conference.siacs.eu?join">conversations@conference.siacs.eu</a></p>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <h4>Need professional support?</h4>
+            <p>Do you want to use Conversations in your company and require assistance in setting up a suitable XMPP server or are you having problem getting started with Conversations?</p>
+            <p>Contact the author <a href="mailto:daniel@siacs.eu">Daniel Gultsch</a> to purchase professional support.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <p>Short FAQ</p>
       </div>
     </div>
   </div>
