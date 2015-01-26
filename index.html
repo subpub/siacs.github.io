@@ -463,7 +463,7 @@
         <div class="panel panel-default">
           <div class="panel-body">
             <h4>Questions?</h4>
-            <p>If you have general questions about Conversations that are not answered by our FAQ you can join the Conversations group chat on <a href="xmpp:conversations@conference.siacs.eu?join">conversations@conference.siacs.eu</a></p>
+            <p>Do you have a general question about Conversations that has not been answered by our FAQ you can join the Conversations group chat on: <a href="xmpp:conversations@conference.siacs.eu?join">conversations@conference.siacs.eu</a></p>
           </div>
         </div>
         <div class="panel panel-default">
@@ -475,7 +475,26 @@
         </div>
       </div>
       <div class="col-lg-7">
-        <p>Short FAQ</p>
+        <p>This is a short excerpt of the entire, much more detailed FAQ that can be found in the <a href=
+        "https://github.com/siacs/Conversations/blob/development/README.md">README.md</a> at our GitHub repository.</p>
+        <h5>How do I install Conversations?</h5>
+        <p>Conversations is entirely open source and licensed under GPLv3. So if you are a software developer you can check out the sources from GitHub and use gradle to build your apk file.</p>
+        <p>The more convenient way — which not only gives you automatic updates but also supports the further development of Conversations — is to buy the App in the Google Play Store.</p>
+        <p>Buying the App from the Play Store will also give you access to our beta test.</p>
+        <h5>How do I create an account?</h5>
+        <p>XMPP, like email, is a federated protocol which means that there is not one company you can create an <em>official XMPP account</em> with. Instead there are hundreds, or even thousands, of provider out there. To find one use a web search engine of your choice. Or maybe your university has one. Or you can run your own. Or ask a friend to run one. Once you've found one, you can use Conversations to create an account. Just select <em>register new account on server</em> within the create account dialog.</p>
+        <h5>How can I set up a custom hostname and port?</h5>
+        <p>Conversations will automatically look up the SRV records for your domain name which can point to any hostname port combination. If your server doesn’t provide those please contact your admin and have them read <a href="http://prosody.im/doc/dns#srv_records">this document on the prosody wiki.</a></p>
+        <h5>How does the address book integration work?</h5>
+        <p>The address book integration was designed to protect your privacy. Conversations neither uploads contacts from your address book to your server nor fills your address book with unnecessary contacts from your online roster. If you manually add a Jabber ID to your phones address book Conversations will use the name and the profile picture of this contact. To make the process of adding Jabber IDs to your address book easier you can click on the profile picture in the contact details within Conversations. This will start an <em>add to address book</em> intent with the JID as the payload. This doesn’t require Conversations to have write permissions on your address book but also doesn't require you to copy/paste a JID from one app to another.</p>
+        <h5>I get 'delivery failed' on my messages</h5>
+        <p>If you get delivery failed on images it's probably because the recipient lost network connectivity during reception. In that case you can try it again at a later time.</p>
+
+        <p>For text messages the answer to your question is a little bit more complex. When you see 'delivery failed' on text messages, it is always something that is being reported by the server. The most common reason for this is that the recipient failed to resume a connection. When a client loses connectivity for a short time the client usually has a five minute window to pick up that connection again. When the client fails to do so because the network connectivity is out for longer than that all messages sent to that client will be returned to the sender resulting in a delivery failed.</p>
+
+        <p>Other less common reasons are that the message you sent didn't meet some criteria enforced by the server (too large, too many). Another reason could be that the recipient is offline and the server doesn't provide offline storage.</p>
+
+        <p>Usually you are able to distinguish between these two groups in the fact that the first one happens always after some time and the second one happens almost instantly.</p>
       </div>
     </div>
   </div>
