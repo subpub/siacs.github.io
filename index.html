@@ -122,7 +122,7 @@
         <p>Conversations will automatically load the message history from your server when you need
         it.</p>
 
-        <p>If you are using more than one device at the same time both your sent and received
+        <p>If you are using more than one device at the same time, both your sent and received
         messages will show up on all devices.</p>
 
         <p class="text-center"><a class="btn btn-primary" href="#synchronization">message
@@ -154,7 +154,7 @@
         <h2 class="text-center">Low impact on battery</h2>
 
         <p>Even though Conversations keeps its own connection to the XMPP server and thus is
-        independent of Google’s push messaging system (GCM) it does a lot of work to keep the
+        independent of Google’s push messaging system (GCM), it does a lot of work to keep the
         impact on battery life as low as possible.</p>
 
         <p class="text-center"><a class="btn btn-primary" href="#optimizations">mobile
@@ -168,7 +168,7 @@
         <h2 class="text-center">Open Source</h2>
 
         <p>The entire source code of Conversations is publicly available on Github and licensed
-        under the GPLv3 which means you can not only review the code and verify its correct
+        under the GPLv3, which means you can not only review the code and verify its correct
         behaviour but also modify it to your own wishes.</p>
 
         <p class="text-center"><a class="btn btn-primary" href="#development">Start developing</a></p>
@@ -187,19 +187,19 @@
       </div>
 
       <div class="col-lg-6 col-lg-pull-3">
-        <p>XMPP is a federated protocol which means you can freely choose a trustworthy server for
+        <p>XMPP is a federated protocol, which means you can freely choose a trustworthy server for
         yourself while still chatting with contacts that are using other servers. The communication
         between Conversations and the XMPP server as well as the communication between the
         individual servers is TLS encrypted.</p>
 
-        <p>This way not only your messages are safe but more importantly it is impossible for an
+        <p>This way, not only your messages are safe but more importantly it is impossible for an
         outside attacker to intercept your meta data (with whom you are chatting) without attacking
         your server first.</p>
 
-        <p>On top of that Conversations gives you the choice to enable one of two end-to-end
-        encryption mechanisms. The first one being OTR which is very easy to setup and gives you
+        <p>On top of that, Conversations gives you the choice to enable one of two end-to-end
+        encryption mechanisms. The first one is OTR, which is very easy to setup and gives you
         forward secrecy and plausible deniability but will disable message synchronization between
-        multiple devices which means your contact will have to select a specific device of yours
+        multiple devices. This means your contact will have to select a specific device of yours
         before starting to communicate with you.</p>
 
         <p>OpenPGP does not have this limitations but is a little harder to setup and potentially
@@ -372,29 +372,29 @@
         <h3 class="offsetanchor" id="optimizations">Mobile optimizations</h3>
 
         <p>The internet connection on cell phones is rather unstable. It constantly switches
-        between wifi and 3G and might even drop out on occasion. The <a href=
+        between WiFi and 3G and might even drop out on occasion. The <a href=
         "https://xmpp.org/extensions/xep-0198.html">XEP-0198: Stream Managment</a> allows
         Conversations to survive those switches. Instead of having to establish a completely new
         session the servers gives the client a 5 minute window to resume a previously established
-        session. Messages that arrived in the mean time will be resent automatically.</p>
+        session. Messages that arrived in the mean time will be redelivered automatically.</p>
 
         <p>Stream management also minimizes traffic by sparing the client from fetching static
         information (contact list, conference bookmark, avatars) on every connect.</p>
 
         <p>Using <a href="https://xmpp.org/extensions/xep-0352.html">XEP-0352: Client State
         Indication</a> Conversations communicates to the server whether or not the client is in the
-        background right now. Based on that information the server can withhold unimportant
+        background right now. Based on this information, the server can withhold unimportant
         packages and thus allowing the client to stay in deep sleep for longer.</p>
 
         <h3 class="offsetanchor" id="synchronization">Message synchronization</h3>
 
         <p>You are no longer limited to one device. If you are online with multiple devices
-        simultaneously the <a href="https://xmpp.org/extensions/xep-0280.html">XEP-0280: Message
+        simultaneously, the <a href="https://xmpp.org/extensions/xep-0280.html">XEP-0280: Message
         Carbons</a> will be used to send copies of both your sent and received messages to all
         devices.</p>
 
         <p>If you are installing Conversations on a new device or catching up after being offline
-        for a while Conversations will use <a href=
+        for a while, Conversations will use <a href=
         "https://xmpp.org/extensions/xep-0313.html">XEP-0313: Message Archive Management</a> to
         fetch the message history from your server.</p>
 
@@ -421,17 +421,17 @@
         <p>Put a face to your contacts. Conversations lets you upload a profile picture (Avatar) to your
         server for all your contacts to see by utilizing the PEP based <a href=
         "https://xmpp.org/extensions/xep-0084.html">XEP-0084: User Avatar</a>. Contrary to other methods
-        of publishing avatars the PEP based approach handles data usage more efficiently by separating data
+        of publishing avatars, the PEP based approach handles data usage more efficiently by separating data
         and meta data.</p>
-        <p>On top of that Conversations allows you to use the contact name and pictures provided by the
+        <p>On top of that, Conversations allows you to use the contact name and pictures provided by the
         Android address book.</p>
         <h3 class="offsetanchor" id="tags">Dynamic tags</h3>
 
         <p>Conversations gives old features a new spin. Being able to organize your contacts into groups
-        has been an XMPP feature for a long time. However instead of the tree-like representation
-        most XMPP clients provide, Conversations uses a tag based approach; letting you easily search for any group or status.<br>
-        To keep Conversations as simple as possible this feature is turned off by default. If you
-        need to handle a large contact base you can enable it via the <em>Show dynamic tags</em>
+        has been an XMPP feature for a long time. However, instead of the tree-like representation
+        most XMPP clients provide, Conversations uses a tag based approach, letting you easily search for any group or status.<br>
+        To keep Conversations as simple as possible, this feature is turned off by default. If you
+        need to handle a large contact base, you can enable it via the <em>Show dynamic tags</em>
         switch in the settings.</p>
 
         <p class="text-center"><a class="btn btn-primary" href=
@@ -462,7 +462,7 @@
         <div class="panel panel-default">
           <div class="panel-body">
             <h4>Questions?</h4>
-            <p>If you have a general question about Conversations that has not been answered by our FAQ you can join the Conversations group chat on: <a href="xmpp:conversations@conference.siacs.eu?join">conversations@conference.siacs.eu</a></p>
+            <p>If you have a general question about Conversations that has not been answered by our FAQ, you can join the Conversations group chat on: <a href="xmpp:conversations@conference.siacs.eu?join">conversations@conference.siacs.eu</a></p>
           </div>
         </div>
         <div class="panel panel-default">
@@ -477,19 +477,19 @@
         <p>This is a short excerpt of the entire, much more detailed FAQ that can be found in the <a href=
         "https://github.com/siacs/Conversations/blob/development/README.md">README.md</a> at our GitHub repository.</p>
         <h5>How do I install Conversations?</h5>
-        <p>Conversations is entirely open source and licensed under GPLv3. So if you are a software developer you can check out the sources from <a href="https://github.com/siacs/Conversations">GitHub</a> and use gradle to build your APK file.</p>
+        <p>Conversations is entirely open source and licensed under GPLv3. So if you are a software developer, you can check out the sources from <a href="https://github.com/siacs/Conversations">GitHub</a> and use gradle to build your APK file.</p>
         <p>The more convenient way — which not only gives you automatic updates but also supports the further development of Conversations — is to buy the App in the <a href="https://play.google.com/store/apps/details?id=eu.siacs.conversations">Google Play Store</a>.</p>
         <p>Buying the App from the Play Store will also give you access to our <a href="#beta">beta test</a>.</p>
         <h5>How do I create an account?</h5>
-        <p>XMPP, like email, is a federated protocol which means that there is not one company you can create an <em>official XMPP account</em> with. Instead there are hundreds, or even thousands, of provider out there. To find one use a web search engine of your choice. Or maybe your university has one. Or you can run your own. Or ask a friend to run one. Once you've found one, you can use Conversations to create an account. Just select <em>register new account on server</em> within the create account dialog.</p>
+        <p>XMPP, like email, is a federated protocol, which means that there is not one company you can create an <em>official XMPP account</em> with. Instead there are hundreds, or even thousands, of provider out there. To find one, use a web search engine of your choice. Or maybe your university has one. Or you can run your own. Or ask a friend to run one. Once you've found one, you can use Conversations to create an account. Just select <em>register new account on server</em> within the create account dialog.</p>
         <h5>How can I set up a custom hostname and port?</h5>
-        <p>Conversations will automatically look up the SRV records for your domain name which can point to any hostname port combination. If your server doesn’t provide those please contact your admin and have them read <a href="http://prosody.im/doc/dns#srv_records">this document on the prosody wiki.</a></p>
+        <p>Conversations will automatically look up the SRV records for your domain name, which can point to any hostname port combination. If your server doesn’t provide those, please contact your admin and have them read <a href="http://prosody.im/doc/dns#srv_records">this document on the prosody wiki.</a></p>
         <h5>How does the address book integration work?</h5>
-        <p>The address book integration was designed to protect your privacy. Conversations neither uploads contacts from your address book to your server nor fills your address book with unnecessary contacts from your online roster. If you manually add a Jabber ID to your phones address book Conversations will use the name and the profile picture of this contact. To make the process of adding Jabber IDs to your address book easier you can click on the profile picture in the contact details within Conversations. This will start an <em>add to address book</em> intent with the JID as the payload. This doesn’t require Conversations to have write permissions on your address book but also doesn't require you to copy/paste a JID from one app to another.</p>
+        <p>The address book integration was designed to protect your privacy. Conversations neither uploads contacts from your address book to your server nor fills your address book with unnecessary contacts from your online roster. If you manually add a Jabber ID to your phones address book, Conversations will use the name and the profile picture of this contact. To make the process of adding Jabber IDs to your address book easier, you can click on the profile picture in the contact details within Conversations. This will start an <em>add to address book</em> intent with the JID as the payload. This doesn’t require Conversations to have write permissions on your address book, but also doesn't require you to copy/paste a JID from one app to another.</p>
         <h5>I get 'delivery failed' on my messages</h5>
-        <p>If you get delivery failed on images it's probably because the recipient lost network connectivity during reception. In that case you can try it again at a later time.</p>
+        <p>If you get delivery failed on images, it's probably because the recipient lost network connectivity during reception. In that case, you can try it again at a later time.</p>
 
-        <p>For text messages the answer to your question is a little bit more complex. When you see 'delivery failed' on text messages, it is always something that is being reported by the server. The most common reason for this is that the recipient failed to resume a connection. When a client loses connectivity for a short time the client usually has a five minute window to pick up that connection again. When the client fails to do so because the network connectivity is out for longer than that all messages sent to that client will be returned to the sender resulting in a delivery failed.</p>
+        <p>For text messages, the answer to your question is a little bit more complex. When you see 'delivery failed' on text messages, it is always something that is being reported by the server. The most common reason for this is that the recipient failed to resume a connection. When a client loses connectivity for a short time, the client usually has a five minute window to pick up that connection again. When the client fails to do so because the network connectivity is out for longer than that, all messages sent to that client will be returned to the sender resulting in a delivery failed.</p>
 
         <p>Other less common reasons are that the message you sent didn't meet some criteria enforced by the server (too large, too many). Another reason could be that the recipient is offline and the server doesn't provide offline storage.</p>
 
@@ -509,11 +509,11 @@
         <p>Start out by searching our <a href="https://github.com/siacs/Conversations/issues">issue tracker</a> for open tickets or get to know us in our group chat on <a href="xmpp:conversations@conference.siacs.eu?join">conversations@conference.siacs.eu</a>
         <p>We are also looking for translators. Transifex provides a very easy to use GUI. You just need to create an account and request to join a language team.</p>
         <h3 class="offsetanchor" id="beta">Beta Testing</h3>
-        <p>If you bought the App on <a href="https://play.google.com/store/apps/details?id=eu.siacs.conversations">Google Play</a>
+        <p>If you bought the App on <a href="https://play.google.com/store/apps/details?id=eu.siacs.conversations">Google Play</a>,
         you can get access to the latest beta version by joining the <a href=
         "https://plus.google.com/communities/107649347599361240873">Conversations Beta Testers</a> community on Google+ and then
         using <a href="https://play.google.com/apps/testing/eu.siacs.conversations">this link</a> to sign up for the beta test.</p>
-        <p>New versions are usually coming out at the beginning of each month with beta versions about a week prior to that.</p>
+        <p>New versions usually come out at the beginning of each month, with beta versions about a week prior to that.</p>
         <h3>Customizations</h3>
         <p>Conversations also provides you with a great base to create your own instant messenger for your customers or employees. If you don’t have the time or resources to do this yourself you can hire the lead developer Daniel Gultsch to provide you with the solution you need.</p>
         <blockquote>
@@ -549,7 +549,7 @@
     <div class="row">
       <div class="col-lg-7 col-lg-push-5">
         <p>We believe in the power of free and open source software and thus made the entire source code publicly
-        available under the GPLv3 license for every one to use. However it takes a lot of time to develop the software and manage the community. So if you like the software please consider either buying the app from the Play Store or donating by other means.</p>
+        available under the GPLv3 license for every one to use. However, it takes a lot of time to develop the software and manage the community. So, if you like the software, please consider either buying the app from the Play Store or donating by other means.</p>
         <p class="text-center"><a href="https://flattr.com/submit/auto?user_id=inputmice&url=http%3A%2F%2Fconversations.siacs.eu&title=Conversations&tags=github&category=software"><img src="http://api.flattr.com/button/flattr-badge-large.png"></a></p>
         <p class="text-center"><a href="https://www.paypal.com/cgi-bin/websc?cmd=_s-xclick&hosted_button_id=CW3SYT3KG5PDL"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif"></a></p>
 		<p class="text-center"><a
