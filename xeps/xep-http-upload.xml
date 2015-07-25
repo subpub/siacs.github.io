@@ -98,7 +98,7 @@
     id='step_03'
     to='upload.montague.tld'
     type='get'>
-  <request 'urn:xmpp:http:upload>
+  <request 'urn:xmpp:http:upload'>
     <filename>my_juliet.png</filename>
     <size>23456</size>
   </request>
@@ -111,7 +111,7 @@
     type='result'>
   <slot xmlns='urn:xmpp:http:upload'>
     <put>https://upload.montague.tld/4a771ac1-f0b2-4a4a-9700-f2a26fa2bb67/my_juliet.png</put>
-    <get>https://download.montague.tld/4a771ac1-f0b2-4a4a-9700-f2a26fa2bb67/my_juliet.png</put>
+    <get>https://download.montague.tld/4a771ac1-f0b2-4a4a-9700-f2a26fa2bb67/my_juliet.png</get>
   </slot>
 </iq>]]></example>
 </section1>
