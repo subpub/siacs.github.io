@@ -9,7 +9,7 @@
   <title>HTTP File Upload</title>
   <abstract>This specification defines a protocol to request permissions from another entity to upload a file to a specific path on an HTTP server and at the same time receive a URL from which that file can later be downloaded again.</abstract>
   <legal>
-    <copyright>This XMPP Extension Protocol is copyright (c) 1999 - 2014 by the XMPP Standards Foundation (XSF).</copyright>
+    <copyright>This XMPP Extension Protocol is copyright (c) 1999 - 2015 by the XMPP Standards Foundation (XSF).</copyright>
     <permissions>Permission is hereby granted, free of charge, to any person obtaining a copy of this specification (the &quot;Specification&quot;), to make use of the Specification without restriction, including without limitation the rights to implement the Specification in a software program, deploy the Specification in a network service, and copy, modify, merge, publish, translate, distribute, sublicense, or sell copies of the Specification, and to permit persons to whom the Specification is furnished to do so, subject to the condition that the foregoing copyright notice and this permission notice shall be included in all copies or substantial portions of the Specification. Unless separate permission is granted, modified works that are redistributed shall not contain misleading information regarding the authors, title, number, or publisher of the Specification, and shall not claim endorsement of the modified works by the authors, any organization or project to which the authors belong, or the XMPP Standards Foundation.</permissions>
     <warranty>## NOTE WELL: This Specification is provided on an &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, express or implied, including, without limitation, any warranties or conditions of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A PARTICULAR PURPOSE. In no event shall the XMPP Standards Foundation or the authors of this Specification be liable for any claim, damages, or other liability, whether in an action of contract, tort, or otherwise, arising from, out of, or in connection with the Specification or the implementation, deployment, or other use of the Specification. ##</warranty>
     <liability>In no event and under no legal theory, whether in tort (including negligence), contract, or otherwise, unless required by applicable law (such as deliberate and grossly negligent acts) or agreed to in writing, shall the XMPP Standards Foundation or any author of this Specification be liable for damages, including any direct, indirect, special, incidental, or consequential damages of any character arising out of the use or inability to use the Specification (including but not limited to damages for loss of goodwill, work stoppage, computer failure or malfunction, or any and all other commercial damages or losses), even if the XMPP Standards Foundation or such author has been advised of the possibility of such damages.</liability>
@@ -42,8 +42,8 @@
   </revision>
 </header>
 <section1 topic='Introduction' anchor='intro'>
-  <p>XMPP protocol extensions already define methods for peer-to-peer file transfer such as &xep0096; or &xep0234; however due to their very nature of being peer-to-peer they don't work very well in scenarios where it is requeried to send a file to multiple receipients at once. They also don’t work alongside offline storage, MUC history and &xep0313;.</p>
-  <p>Uploading files manually to an HTTP server and sharing the link has been a workaround for this for a long time now. While users have a variety of services to choose from for this task the major downside of this manual approach is that an XMPP client can not automate this process on behalf of the user since these services don’t share a common api. Furthermore using a third party service would probably require the user to enter addional credentials into their XMPP client specifically for the file upload.</p>
+  <p>XMPP protocol extensions already define methods for peer-to-peer file transfer such as &xep0096; or &xep0234; however due to their very nature of being peer-to-peer they don't work very well in scenarios where it is requeried to send a file to multiple receipients or multiple resources of the same receipient  at once. They also don’t work alongside offline storage, MUC history and &xep0313;.</p>
+  <p>Uploading files manually to an HTTP server and sharing the link has been a workaround for this for a long time now. While users have a variety of services to choose from the downside of this manual approach is that an XMPP client can not automate this process on behalf of the user since these services don’t share a common api. Furthermore using a third party service would probably require the user to enter addional credentials into their XMPP client specifically for the file upload.</p>
   <p>This XEP defines an approach to request permissions from another entity to upload a file to a specific path on an HTTP server and at the same time receive an URL from which that file can later be downloaded again. These tuples consisting of a PUT and a GET-URL are called slots.</p>
 </section1>
 <section1 topic='Requirements' anchor='reqs'>
@@ -92,7 +92,8 @@
 </iq>]]></example>
 </section1>
 <section1 topic='Requesting a slot' anchor='request'>
-  <p>A client requests a new upload slot by communicating the file name and size to the upload service</p>
+  <p>A client requests a new upload slot by sending an IQ-get to the upload service containing a &lt;request&gt; child element qualified by the urn:xmpp:http:upload namespace. This element MUST include elements &lt;filename&gt; and &lt;size&gt; containing the file name and size respectively.</p>
+  <p>An additional element &lt;content-type&gt; containing the Content-Type is OPTIONAL.</p>
   <example caption='Client requests a slot on the upload service'><![CDATA[
 <iq from='romeo@montague.tld/garden
     id='step_03'
@@ -101,9 +102,10 @@
   <request 'urn:xmpp:http:upload'>
     <filename>my_juliet.png</filename>
     <size>23456</size>
+    <content-type>image/jpeg</content-type>
   </request>
 </iq>]]></example>
-  <p>The upload service responds with both a PUT and a GET URL. The service SHOULD keep the file name and especially the file ending intact. Using the same hostname for PUT and GET is OPTIONAL. The host SHOULD provide Transport Layer Security.</p>
+  <p>The upload service responds with both a PUT and a GET URL wrapped by a &lt;slot&gt; element. The service SHOULD keep the file name and especially the file ending intact. Using the same hostname for PUT and GET is OPTIONAL. The host SHOULD provide Transport Layer Security.</p>
   <example caption='The upload service responsd with a slot'><![CDATA[
 <iq from='upload.montague.tld
     id='step_03'
@@ -116,8 +118,8 @@
 </iq>]]></example>
 </section1>
 <section1 topic='Error conditions' anchor='errors'>
-  <p>Instead of providing the client with a slot the service might respond with an error if the requested file size is too large or the user has reached a quota.</p>
-  <example caption='Alternative response by the upload service'><![CDATA[
+  <p>Instead of providing the client with a slot the service MAY respond with an error if the requested file size is too large.</p>
+  <example caption='Alternative response by the upload service if the file size was too large'><![CDATA[
 <iq from='upload.montague.tld
     id='step_03'
     to='romeo@montague.tld/garden
@@ -134,12 +136,42 @@
     </file-too-large>
   </error>
 </iq>]]></example>
+<p>For any other type of error the service SHOULD respond with appropriate error types to indicate temporary or permanent errors.</p>
+  <example caption='Alternative response by the upload service to indicate a temporary error after the client exceeded a quota'><![CDATA[
+<iq from='upload.montague.tld
+    id='step_03'
+    to='romeo@montague.tld/garden
+    type='error'>
+  <request 'urn:xmpp:http:upload>
+    <filename>my_juliet.png</filename>
+    <size>23456</size>
+  </request>
+  <error type='wait'>
+    <resource-constraint xmlns='urn:ietf:params:xml:ns:xmpp-stanzas' />
+    <text xmlns='urn:ietf:params:xml:ns:xmpp-stanzas>Quota reached. You can only upload 5 files in 5 minutes</text>
+  </error>
+</iq>]]></example>
+<example caption='Alternative response by the upload service to indicate a permanent error to a client that is not allowed to upload files'><![CDATA[
+<iq from='upload.montague.tld
+    id='step_03'
+    to='romeo@montague.tld/garden
+    type='error'>
+  <request 'urn:xmpp:http:upload>
+    <filename>my_juliet.png</filename>
+    <size>23456</size>
+  </request>
+  <error type='cancel'>
+    <not-allowed xmlns='urn:ietf:params:xml:ns:xmpp-stanzas' />
+    <text xmlns='urn:ietf:params:xml:ns:xmpp-stanzas>Only premium members are allowed to upload files</text>
+  </error>
+</iq>]]></example>
 </section1>
 <section1 topic='Upload' anchor='upload'>
-  <p>The actual upload of the file happens via HTTP-PUT and is out of scope of this document. There is no further XMPP communication required between the upload service and the client. A HTTP status Code of 201 means that the server is now ready to serve the file via the provided GET URL. If the upload fails for whatever reasons the client MAY request a new slot.</p>
+  <p>The actual upload of the file happens via HTTP-PUT and is out of scope of this document. The upload service MUST reject the file upload if the Content-Length does not match the size of the slot request. The service SHOULD reject the file if the Content-Type has been specified beforehand and does not match. The service MAY assume application/octet-stream as a Content-Type if it the client did not specficy a Content-Type at all.</p>
+  <p>There is no further XMPP communication required between the upload service and the client. A HTTP status Code of 201 means that the server is now ready to serve the file via the provided GET URL. If the upload fails for whatever reasons the client MAY request a new slot.</p>
 </section1>
 <section1 topic='Implementation Notes' anchor='impl'>
-  <p>The upload service SHOULD choose an appropriate timeout for the validity of the PUT URL. Since there is no reason for a client to wait between requesting the slot and starting the upload relativly low time out values of around 60s MAY be enough.</p>
+  <p>The upload service SHOULD choose an appropriate timeout for the validity of the PUT URL. Since there is no reason for a client to wait between requesting the slot and starting the upload relativly low time out values of around 60s are RECOMENDED.</p>
   <p>It is RECOMMENDED that the service stores the files for as long as possible which is of course limited by storage capacity. A service MAY choose to store the latest x MiB of a given user.</p>
 </section1>
 <section1 topic='Security Considerations' anchor='security'>
