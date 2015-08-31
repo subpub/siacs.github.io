@@ -37,12 +37,12 @@
       </div>
       <div class="col-lg-4">
         <h2 class="text-center">Device Trust</h2>
-        <p>With OMEMO you no longer trust user identities but device identities. If you are communicating with a contact for the first time or if that contact recently got a new device you will be presented with a fingerprint for that device. You can then either verify that fingerprint out of band (for example via a quick phone call) or if you are reasonbly sure that your transport is secure (for instance if you are chatting on the same, trusted server) you can choose to trust a device on first use. If you have trusted devices of your contact in the past you can also use those devices as a secure channel to verify the fingerprint of a new device.</p>
+        <p>With OMEMO you no longer trust user identities but device identities. If you are communicating with a contact for the first time or if that contact recently got a new device, you will be presented with a fingerprint for that device. You can then either verify that fingerprint out of band (for example via a quick phone call) or, if you are reasonbly sure that your transport is secure (for instance if you are chatting on the same, trusted server), you can choose to trust a device on first use. If you have trusted devices of your contact in the past you can also use those devices as a secure channel to verify the fingerprint of a new device by having your contact verify the fingerprint via chat.</p>
       </div>
       <div class="col-lg-4">
         <h2 class="text-center">Background</h2>
-        <p>OMEMO uses the <a href="https://github.com/trevp/axolotl/wiki">Axolotl ratchet</a> to establish secure sessions between every combination of devices for you and your contact. Those sessions are then being used to communicate a secure key to all devices. That key again is used to encrypt your messages with AES-GCM. OMEMO will generate a new key for every message. The long-living Axolotl sessions in the background deal with the challanges of message reordering, message loss and accidental duplication.</p>
-        <p>Being build upon <a href="http://xmpp.org/extensions/xep-0163.html">PEP (Personal Eventing Protocol)</a> to announce the pre-keys used by Axolotl to establish new sessions OMEMO requires little to no change on the existing XMPP server infrastruktur.</p>
+        <p>OMEMO uses the <a href="https://github.com/trevp/axolotl/wiki">Axolotl ratchet</a> to establish secure sessions between every combination of devices for you and your contact. Those sessions are then being used to communicate secure keys to all devices. OMEMO will generate a new key for every message. That key is used to encrypt your message with AES-GCM. The long-lived Axolotl sessions in the background deal with the challenges of message reordering, message loss and accidental duplication.</p>
+        <p>Being built upon <a href="http://xmpp.org/extensions/xep-0163.html">PEP (Personal Eventing Protocol)</a> to announce the pre-keys used by Axolotl to establish new sessions, OMEMO requires little to no change to the existing XMPP server infrastructure.</p>
       </div>
     </div>
   </div>
