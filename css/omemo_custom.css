@@ -1,0 +1,10 @@
+body {
+  padding-top: 40px;
+  position: relative;
+}
+
+@media (max-width: 1200px) {
+  [class*="col-"]{
+      margin-bottom: 70px;
+  }
+}
