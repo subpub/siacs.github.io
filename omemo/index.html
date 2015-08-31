@@ -32,7 +32,7 @@
     <div class="row">
       <div class="col-lg-4">
         <h2 class="text-center">Benefits</h2>
-        <p>The OMEMO encryption (<strong>O</strong>MEMO <strong>M</strong>ulti-<strong>E</strong>nd <strong>M</strong>essage and <strong>O</strong>bject Encryption) gives you all the advantages you would expect from a modern-day encrpytion protocol like Perfect Forward Secrecy while allowing to to keep the benifits of message synchronization and offline delivery.</p>
+        <p>The OMEMO encryption (<strong>O</strong>MEMO <strong>M</strong>ulti-<strong>E</strong>nd <strong>M</strong>essage and <strong>O</strong>bject Encryption) gives you all the advantages you would expect from a modern-day encrpytion protocol like <a href="https://whispersystems.org/blog/advanced-ratcheting/">Future and Forward Secrecy</a> while allowing to to keep the benifits of <a href="http://conversations.im/#xmpp">message synchronization and offline delivery</a>.</p>
         <p>OMEMO not only gives you a stronger encryption than OpenPGP and OTR but is also much easier to setup. OMEMO is the encryption you can actually use in your daily life. Turn it on once and forget you ever did.</p>
       </div>
       <div class="col-lg-4">
@@ -41,8 +41,8 @@
       </div>
       <div class="col-lg-4">
         <h2 class="text-center">Background</h2>
-        <p>OMEMO uses the Axolotl ratchet to establish secure sessions between every combination of devices for you and your contact. Those sessions are then being used to communicate a secure key to all devices. That key again is used to encrypt your messages with AES-GCM. OMEMO will generate a new key for every message. The long-living Axolotl sessions in the background deal with the challanges of message reordering, message loss and accidental duplication.</p>
-        <p>Being build upon PEP (Personal Eventing Protocol) to announce the pre-keys used by Axolotl to establish new sessions OMEMO requires little to no change on the existing XMPP server infrastruktur.</p>
+        <p>OMEMO uses the <a href="https://github.com/trevp/axolotl/wiki">Axolotl ratchet</a> to establish secure sessions between every combination of devices for you and your contact. Those sessions are then being used to communicate a secure key to all devices. That key again is used to encrypt your messages with AES-GCM. OMEMO will generate a new key for every message. The long-living Axolotl sessions in the background deal with the challanges of message reordering, message loss and accidental duplication.</p>
+        <p>Being build upon <a href="http://xmpp.org/extensions/xep-0163.html">PEP (Personal Eventing Protocol)</a> to announce the pre-keys used by Axolotl to establish new sessions OMEMO requires little to no change on the existing XMPP server infrastruktur.</p>
       </div>
     </div>
   </div>
