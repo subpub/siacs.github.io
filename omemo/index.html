@@ -69,10 +69,10 @@
         <thead>
           <tr>
             <th>#</th>
-            <th>OpenPGP</th>
-            <th>OpenPGP (signed)<sup>&nbsp;1&nbsp;2</sup></th>
-            <th>OTR</th>
-            <th>OMEMO</th>
+            <th><a href="http://www.xmpp.org/extensions/xep-0027.html">OpenPGP</a></th>
+            <th><a href="http://xmpp.org/extensions/xep-0374.html">OX</a></th>
+            <th><a href="http://xmpp.org/extensions/xep-0364.html">OTR</a></th>
+            <th><a href="https://conversations.im/xeps/multi-end.html">OMEMO</a></th>
           <tr>
         </thead>
         <tbody>
@@ -93,7 +93,7 @@
           <tr>
             <td>File Transfer</td>
             <td>Yes</td>
-            <td>Yes</td>
+            <td>No<sup>&nbsp;1&nbsp;2</sup></td>
             <td>No<sup>&nbsp;1</sup></td>
             <td>Yes</td>
           </tr>
@@ -112,24 +112,32 @@
             <td>Yes</td>
           </tr>
           <tr>
-            <td>Forward Secrecy</td>
+            <td>Forward Secrecy<sup>&nbsp;3</sup></td>
             <td>No</td>
             <td>No</td>
             <td>Yes</td>
             <td>Yes</td>
           </tr>
           <tr>
+            <td>Server side archive<sup>&nbsp;3</sup></td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>No</td>
+            <td>No</td>
+          <tr>
+          <tr>
             <td>Per Message Overhead</td>
             <td>High</td>
             <td>High</td>
             <td>Low</td>
-            <td>Medium<sup>&nbsp;3</sup></td>
+            <td>Medium<sup>&nbsp;4</sup></td>
           </tr>
         </tbody>
       </table>
-      <p><sup>1</sup> Not standardized</sup></p>
-      <p><sup>2</sup> Hypothetical variant of <a href="http://www.xmpp.org/extensions/xep-0027.html">XEP-0027</a> that not only encrypts messages but also signs them.</p>
-      <p><sup>3</sup> Overhead increases linearly with number of devices</p>
+      <p><sup>1</sup> Not standardized</a>
+      <p><sup>2</sup> Can fallback to regular OpenPGP</p>
+      <p><sup>3</sup> The traits server side archive and forward secrecy are mutually exclusive</p>
+      <p><sup>4</sup> Overhead increases linearly with number of devices</p>
     </div>
   </div>
   <hr>
