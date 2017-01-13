@@ -494,21 +494,18 @@
         <p>Buying the App from the Play Store will also give you access to our <a href="#beta">beta test</a>.</p>
         <h5>How do I create an account?</h5>
         <p>XMPP, like email, is a federated protocol, which means that there is not one company you can create an <em>official XMPP account</em> with. Instead there are hundreds, or even thousands, of providers out there. One of those providers is our very own <a href="https://account.conversations.im"><em>conversations.im</em></a>. If you don’t like to use <em>conversations.im</em> use a web search engine of your choice to find another provider. Or maybe your university has one. Or you can run your own. Or ask a friend to run one. Once you've found one, you can use Conversations to create an account. Just select <em>register new account on server</em> within the create account dialog.</p>
+	<h6>Domain hosting</h6>
+	<p>Using your own domain not only gives you a more recognizable Jabber ID, it also gives you the flexibilty to migrate your account between different XMPP providers. This is a good compromise between the responsibilities of having to operate your own server and the downsides of being dependent on a single provider.</p>
+	<p>Learn more about <a href="https://account.conversations.im/domain">conversations.im Jabber/XMPP domain hosting</a>.</p>
+	<h6>Running your own</h6>
+	<p>If you already have a server somewhere and are willing and able to put the necessary work in, one alternative-in the spirit of federation-is to run your own. We recommend either <a href="https://prosody.im">Prosody</a> or <a href="https://www.ejabberd.im">ejabberd</a>. Both of which have their own strengths. Ejabberd is slightly more mature nowadays but Prosody is arguably easier to set up.</p>
+
+	<p>For Prosody you need a couple of so called <a href="https://modules.prosody.im/">community modules</a> most of which are maintained by the same people that develop Prosody.</p>
+	<p>If you pick ejabberd make sure you use the latest version. Linux Distributions might bundle some very old versions of it.</p>
         <h5 id="dns" class="offsetanchor">How can I set up a custom hostname and port?</h5>
-        <p>Conversations will automatically look up the SRV records for your domain name, which can point to any hostname port combination. If your server doesn’t provide those, please contact your admin and have them read <a href="http://prosody.im/doc/dns#srv_records">this document on the prosody wiki.</a></p>
-		<p>A brief discussion on why Conversations won’t allow you to enter the IP address manually
-		can be found in <a
-			href="https://github.com/siacs/Conversations/issues/962">issue&nbsp;#962</a>.
+        <p>Conversations will automatically look up the SRV records for your domain name, which can point to any hostname port combination. If your server doesn’t provide those, please contact your admin and have them read <a href="http://prosody.im/doc/dns#srv_records">this document on the prosody wiki</a>. If your server operator is unwilling to fix this you can enable advanced server settings in the expert settings of Conversations.</p>
         <h5>How does the address book integration work?</h5>
         <p>The address book integration was designed to protect your privacy. Conversations neither uploads contacts from your address book to your server nor fills your address book with unnecessary contacts from your online roster. If you manually add a Jabber ID to your phones address book, Conversations will use the name and the profile picture of this contact. To make the process of adding Jabber IDs to your address book easier, you can click on the profile picture in the contact details within Conversations. This will start an <em>add to address book</em> intent with the JID as the payload. This doesn’t require Conversations to have write permissions on your address book, but also doesn't require you to copy/paste a JID from one app to another.</p>
-        <h5>I get 'delivery failed' on my messages</h5>
-        <p>If you get delivery failed on images, it's probably because the recipient lost network connectivity during reception. In that case, you can try it again at a later time.</p>
-
-        <p>For text messages, the answer to your question is a little bit more complex. When you see 'delivery failed' on text messages, it is always something that is being reported by the server. The most common reason for this is that the recipient failed to resume a connection. When a client loses connectivity for a short time, the client usually has a five minute window to pick up that connection again. When the client fails to do so because the network connectivity is out for longer than that, all messages sent to that client will be returned to the sender resulting in a delivery failed.</p>
-
-        <p>Other less common reasons are that the message you sent didn't meet some criteria enforced by the server (too large, too many). Another reason could be that the recipient is offline and the server doesn't provide offline storage.</p>
-
-        <p>Usually you are able to distinguish between these two groups in the fact that the first one happens always after some time and the second one happens almost instantly.</p>
       </div>
     </div>
   </div>
