@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+
+    <title>Conversations.im Summer of Code 2017</title>
+    <link href="https://conversations.im/css/bootstrap.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body style="padding-top: 20px">
+  <div class="container">
+    <h2>Conversations.im Summer of Code 2017</h2>
+    <h3>Project Ideas</h3>
+    <h4>Implement client-side MIX in Conversations</h4>
+    <ul>
+	    <li><strong>Software Project:</strong> Conversations</li>
+	    <li><strong>Software URL:</strong> <a href="https://conversations.im">conversations.im</a></li>
+	    <li><strong>Software VCS URL:</strong> <a href="https://github.com/siacs/Conversations">github.com/siacs/Conversations</a></li>
+	    <li><strong>Software Description</strong> Conversations is a state of the art mobile instant messaging client for Android. It provides a modern user experience and is on top of the current developments in XMPP standards.</li>
+	    <li><strong>Brief explanation:</strong> MIX is the upcoming standard in group chats. This project would be one of the first implementations of this standard.</li>
+	    <li><strong>Expected results:</strong>
+		    <ul>
+			    <li>Allow users to subscribe to MIX channels</li>
+			    <li>Display users in a channel</li>
+			    <li>Implement UI to create new channels</li>
+		</ul>
+	</li>
+	<li><strong>Difficulty:</strong> Moderate</li>
+	<li><strong>Implementation Language:</strong> Java/Android</li>
+	<li><strong>Contact Details:</strong> MUC at <a href="xmpp:conversations@conference.siacs.eu?join">conversations@conferenc.siacs.eu</a></li>
+    </ul>
+    <h4>Port Conversations to Desktop using JavaFX and Babbler</h4>
+    <ul>
+	    <li><strong>Software Project:</strong> Conversations</li>
+	    <li><strong>Software URL:</strong> <a href="https://conversations.im">conversations.im</a></li>
+	    <li><strong>Software VCS URL:</strong> <a href="https://github.com/siacs/Conversations">github.com/siacs/Conversations</a></li>
+	    <li><strong>Software Description</strong> Conversations is a state of the art mobile instant messaging client for Android. It provides a modern user experience and is on top of the current developments in XMPP standards.</li>
+	    <li><strong>Brief explanation:</strong> Currently Conversations is only available on Android 4.0+ operating systems. However users want a similiar experience on their Desktop. This project is about creating a desktop variant of Conversations which aims to provide the same user experience.</li>
+	    <li><strong>Expected results:</strong> It is impossible within the time frame of GSOC to copy the entire functionality of Conversations however the main features of Conversations can be boilt down to a few managable tasks. The focus should definitely by on UI coding though. If the actual XMPP side of things turn out to be too much work it is preferable to have a complete UI. 
+		    <ul>
+			    <li>Create a single page / slack like UI with Java FX </li>
+			    <li>Carbons support</li>
+			    <li>HTTP upload and preview of Images</li>
+			<li>Infite history srcolling with local archive and MAM </li>
+			<li>OMEMO encryption </li>
+		</ul>
+	</li>
+        <li><strong>Knowledge Prerequisite:</strong>
+          <ul><li>Java 8</li><li>JavaFX</li></ul>
+        </li>
+	<li><strong>Difficulty:</strong> Moderate</li>
+	<li><strong>Implementation Language:</strong> Java 8</li>
+	<li><strong>Contact Details:</strong> MUC at <a href="xmpp:conversations@conference.siacs.eu?join">conversations@conferenc.siacs.eu</a></li>
+    </ul>
+    <h4>Upgrade Gajim to use GTK3</h4>
+ <ul>
+	    <li><strong>Software Project:</strong> Gajim</li>
+	    <li><strong>Software URL:</strong> <a href="https://gajim.org">gajim.org</a></li>
+	    <li><strong>Software VCS URL:</strong> <a href="https://dev.gajim.org/gajim/gajim">dev.gajim.org/gajim/gajim</a></li>
+	    <li><strong>Software Description</strong> Gajim is an XMPP client for Windows and Linux and acts as the counterpart for Conversations on the desktop.</li>
+	    <li><strong>Brief explanation:</strong> Gajim is currently using GTK2 and looks rather outdated. This project would port the Gajim code to use GTK3 and also do some UX refreshments.</li>
+	    <li><strong>Expected results:</strong>
+		    <ul>
+			    <li>Port to GTK3</li>
+			    <li>Rethink UI when ever possible</li>
+		</ul>
+	</li>
+	<li><strong>Difficulty:</strong> Moderate</li>
+	<li><strong>Implementation Language:</strong> Python</li>
+	<li><strong>Contact Details:</strong> MUC at <a href="xmpp:conversations@conference.siacs.eu?join">conversations@conferenc.siacs.eu</a></li>
+    </ul>
+<h4>Add OMEMO support to Babbler</h4>
+ <ul>
+	    <li><strong>Software Project:</strong> Babbler</li>
+	    <li><strong>Software URL:</strong> <a href="https://sco0ter.bitbucket.io/babbler/?">sco0ter.bitbucket.io/babbler/?</a></li>
+	    <li><strong>Software VCS URL:</strong> <a href="https://bitbucket.org/sco0ter/babbler/src">bitbucket.org/sco0ter/babbler/src</a></li>
+	    <li><strong>Software Description</strong> Babbler is a young XMPP client library for Java SE 8 based on JAXB as XML processing technology.</li>
+	    <li><strong>Brief explanation:</strong> Add support for the OMEMO encryption to Babbler</li>
+	    <li><strong>Expected results:</strong>
+		    <ul>
+			    <li>Being able to send e2ee messages back and forth with other OMEMO implementations</li>
+			    <li>Basic trust model. Ability to enable disable devices</li>
+		</ul>
+	</li>
+	<li><strong>Difficulty:</strong> Moderate</li>
+	<li><strong>Implementation Language:</strong> Java 8</li>
+	<li><strong>Contact Details:</strong> MUC at <a href="xmpp:conversations@conference.siacs.eu?join">conversations@conferenc.siacs.eu</a></li>
+    </ul>
+ 
+ </div>
+</body>
